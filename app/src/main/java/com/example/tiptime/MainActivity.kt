@@ -21,6 +21,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.DrawableRes
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -114,7 +116,9 @@ fun TipTimeLayout() {
     var roundUp by remember { mutableStateOf(false) }
 
     Column(
-        modifier = Modifier.padding(40.dp),
+        modifier = Modifier
+            .padding(40.dp)
+            .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ){
